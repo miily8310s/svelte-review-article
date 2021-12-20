@@ -5,7 +5,7 @@
   fetchTodos();
 </script>
 
-<!-- TODO: スタイル整える -->
+<h2>onMountの例</h2>
 <ul>
   <div>
     {#each $todos as todo}
