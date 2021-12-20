@@ -6,23 +6,26 @@
 </script>
 
 <!-- TODO: スタイル整える -->
-<main>
+<ul>
   {#each $todos as todo}
-    <div>
+    <li>
       {todo.id}
       {todo.title}
       {todo.userId}
       {todo.completed}
-    </div>
+    </li>
   {:else}
     <div>Loding...</div>
   {/each}
-</main>
+</ul>
 
 <style>
-  main {
+  ul {
     display: flex;
+    /* text-align: center; */
+  }
+  li {
+    list-style: none;
     flex-wrap: wrap;
-    text-align: center;
   }
 </style>
