@@ -7,25 +7,41 @@
 
 <!-- TODO: スタイル整える -->
 <ul>
-  {#each $todos as todo}
-    <li>
-      {todo.id}
-      {todo.title}
-      {todo.userId}
-      {todo.completed}
-    </li>
-  {:else}
-    <div>Loding...</div>
-  {/each}
+  <div>
+    {#each $todos as todo}
+      <li>
+        {todo.id}
+        {todo.title}
+        <input type="checkbox" checked={todo.completed} />
+      </li>
+    {:else}
+      <div>Loading...</div>
+    {/each}
+  </div>
 </ul>
 
 <style>
   ul {
     display: flex;
-    /* text-align: center; */
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
   }
   li {
+    text-align: left;
     list-style: none;
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  li:nth-child(2n + 1) {
+    background-color: #6998ab;
+  }
+  li:nth-child(2n) {
+    background-color: #406882;
+  }
+  input {
+    margin: 0 1rem;
   }
 </style>
